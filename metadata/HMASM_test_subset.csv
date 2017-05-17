@@ -1,0 +1,21 @@
+SRS ID,Body Site,Assembly file location,Assembly MD5,Assembly File Size,Reads file location,Reads MD5,Reads File Size
+SRS052697,stool,/data/HMASM/PGAs/stool/SRS052697.scaffolds.fa.bz2,703097fa767ed5306aa19852a283b9d0,59741294,/data/Illumina/stool/SRS052697.tar.bz2,7eefa0912f517ef3b18348b9d82041bd,5892963376
+SRS053214,stool,/data/HMASM/PGAs/stool/SRS053214.scaffolds.fa.bz2,28ec655bcd373898c8247fcb1fcb368b,35059395,/data/Illumina/stool/SRS053214.tar.bz2,9251b6f99948ab01533622d50dc501d5,7101066291
+SRS056259,stool,/data/HMASM/PGAs/stool/SRS056259.scaffolds.fa.bz2,e4bdac5fd0d7fe1fb973fff1865d73ed,41765389,/data/Illumina/stool/SRS056259.tar.bz2,1d1d33dc7b1aef9505c215549cbf7106,8090302900
+SRS058770,stool,/data/HMASM/PGAs/stool/SRS058770.scaffolds.fa.bz2,81b7f741a32233bab19bb3f76e11476f,37379471,/data/Illumina/stool/SRS058770.tar.bz2,e28502fa559e6be968692b444802d3e7,8950995228
+SRS062427,stool,/data/HMASM/PGAs/stool/SRS062427.scaffolds.fa.bz2,4aec88cb4f90c4cb0dfdbca26adb3cf9,19998455,/data/Illumina/stool/SRS062427.tar.bz2,c248e4340819623767747466e6d9f68c,6327674999
+SRS063985,stool,/data/HMASM/PGAs/stool/SRS063985.scaffolds.fa.bz2,9e5d4549e5e5ea8b4e0afa2d98bbc2a7,39164620,/data/Illumina/stool/SRS063985.tar.bz2,555fcb2cf2bfcefdf489cdab9a3e42c7,6926974329
+SRS011239,stool,/data/HMASM/PGAs/stool/SRS011239.scaffolds.fa.bz2,15b254b028fd0704cd4e3b90f353f535,40279637,/data/Illumina/stool/SRS011239.tar.bz2,db23cae902ca6fbeddceac37aacea9ae,9533267191
+SRS013215,stool,/data/HMASM/PGAs/stool/SRS013215.scaffolds.fa.bz2,29b47f544663f98fc7cc99232f91ad97,9996505,/data/Illumina/stool/SRS013215.tar.bz2,8a5f71b63232adf7c577e82bc7c20396,7825547813
+SRS013476,stool,/data/HMASM/PGAs/stool/SRS013476.scaffolds.fa.bz2,024b0aefe3825a350ea47b91ff2e00fe,50916895,/data/Illumina/stool/SRS013476.tar.bz2,1e329e601122ddbef43435db29122fb6,7099578024
+SRS014459,stool,/data/HMASM/PGAs/stool/SRS014459.scaffolds.fa.bz2,2ffbe13743578e8c409507a6153fca16,56289998,/data/Illumina/stool/SRS014459.tar.bz2,be206b81370ebeb88d90369dba344154,5414215806
+SRS011086,tongue_dorsum,/data/HMASM/PGAs/tongue_dorsum/SRS011086.scaffolds.fa.bz2,5da620fdee44b5410361e7e5c79843ad,16755617,/data/Illumina/tongue_dorsum/SRS011086.tar.bz2,7977372b5507f25215a66288a05dbaa0,6074258190
+SRS014124,tongue_dorsum,/data/HMASM/PGAs/tongue_dorsum/SRS014124.scaffolds.fa.bz2,11b28880a75f15b8c67f131d206ea474,21735480,/data/Illumina/tongue_dorsum/SRS014124.tar.bz2,c134e6f79e7f78c17b993b5bb73a2267,6751777967
+SRS014271,tongue_dorsum,/data/HMASM/PGAs/tongue_dorsum/SRS014271.scaffolds.fa.bz2,d3fd7af7b14777613b8394deb26b9f91,36905043,/data/Illumina/tongue_dorsum/SRS014271.tar.bz2,2941691b455f40178f08e721b89c8e8e,6005221232
+SRS015038,tongue_dorsum,/data/HMASM/PGAs/tongue_dorsum/SRS015038.scaffolds.fa.bz2,ff74575a82b283c83695c0dbbfd03b42,23693729,/data/Illumina/tongue_dorsum/SRS015038.tar.bz2,c6adc2faaed4a3aeb697b66029139b54,2869480332
+SRS015057,tongue_dorsum,/data/HMASM/PGAs/tongue_dorsum/SRS015057.scaffolds.fa.bz2,5b569e6d7b891026ac28e9ff0c5ef2ce,32026222,/data/Illumina/tongue_dorsum/SRS015057.tar.bz2,f23abd473ec173224580961f87531e6e,7101267405
+SRS015537,tongue_dorsum,/data/HMASM/PGAs/tongue_dorsum/SRS015537.scaffolds.fa.bz2,2b5cbf090581c25e75a4f2b6831d4bf6,11720309,/data/Illumina/tongue_dorsum/SRS015537.tar.bz2,9b4cb32ddc35babd7eaa325fd691d761,4732236726
+SRS015893,tongue_dorsum,/data/HMASM/PGAs/tongue_dorsum/SRS015893.scaffolds.fa.bz2,eaf269cb6d6845b576de541524f0c22f,29231862,/data/Illumina/tongue_dorsum/SRS015893.tar.bz2,0783704f13a3fa892037977108ec8328,5122237358
+SRS016037,tongue_dorsum,/data/HMASM/PGAs/tongue_dorsum/SRS016037.scaffolds.fa.bz2,145e1036ce1eeb7b83c8a32958362a00,26197579,/data/Illumina/tongue_dorsum/SRS016037.tar.bz2,a6fa78a0d1cbb8c7326c1c72584628b5,6871345745
+SRS016501,tongue_dorsum,/data/HMASM/PGAs/tongue_dorsum/SRS016501.scaffolds.fa.bz2,542e9bcf8dc414735dd9eca1acd9fa00,10945414,/data/Illumina/tongue_dorsum/SRS016501.tar.bz2,cdcd4e1f064093fcb6aa1b85f0fe1d77,5142755184
+SRS016740,tongue_dorsum,/data/HMASM/PGAs/tongue_dorsum/SRS016740.scaffolds.fa.bz2,c7d256be631f10cea0d6f39bc48fe08b,28316552,/data/Illumina/tongue_dorsum/SRS016740.tar.bz2,7671c5bcbcc376dfdb9bdfc0067f65ec,3495379991

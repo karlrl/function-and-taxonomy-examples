@@ -1,0 +1,166 @@
+Rejected 20958 READS because of filtering out non-biological READS
+Rejected 2560 READS because READLEN < 1
+Read 6986 spots for /home/gavin/ncbi/public/sra/SRR040853.sra
+Written 4426 spots for /home/gavin/ncbi/public/sra/SRR040853.sra
+Rejected 43299 READS because of filtering out non-biological READS
+Rejected 5092 READS because READLEN < 1
+Read 14433 spots for /home/gavin/ncbi/public/sra/SRR045535.sra
+Written 9341 spots for /home/gavin/ncbi/public/sra/SRR045535.sra
+Rejected 56214 READS because of filtering out non-biological READS
+Rejected 6662 READS because READLEN < 1
+Read 18738 spots for /home/gavin/ncbi/public/sra/SRR045570.sra
+Written 12076 spots for /home/gavin/ncbi/public/sra/SRR045570.sra
+Rejected 24039 READS because of filtering out non-biological READS
+Rejected 2952 READS because READLEN < 1
+Read 8013 spots for /home/gavin/ncbi/public/sra/SRR045624.sra
+Written 5061 spots for /home/gavin/ncbi/public/sra/SRR045624.sra
+Rejected 140823 READS because of filtering out non-biological READS
+Rejected 19449 READS because READLEN < 1
+Read 46941 spots for /home/gavin/ncbi/public/sra/SRR046441.sra
+Written 27492 spots for /home/gavin/ncbi/public/sra/SRR046441.sra
+Rejected 26328 READS because of filtering out non-biological READS
+Rejected 4326 READS because READLEN < 1
+Read 8776 spots for /home/gavin/ncbi/public/sra/SRR046659.sra
+Written 4450 spots for /home/gavin/ncbi/public/sra/SRR046659.sra
+Rejected 32388 READS because of filtering out non-biological READS
+Rejected 4236 READS because READLEN < 1
+Read 10796 spots for /home/gavin/ncbi/public/sra/SRR046830.sra
+Written 6560 spots for /home/gavin/ncbi/public/sra/SRR046830.sra
+Rejected 57324 READS because of filtering out non-biological READS
+Rejected 7942 READS because READLEN < 1
+Read 19108 spots for /home/gavin/ncbi/public/sra/SRR046888.sra
+Written 11166 spots for /home/gavin/ncbi/public/sra/SRR046888.sra
+Rejected 59331 READS because of filtering out non-biological READS
+Rejected 7147 READS because READLEN < 1
+Read 19777 spots for /home/gavin/ncbi/public/sra/SRR047235.sra
+Written 12630 spots for /home/gavin/ncbi/public/sra/SRR047235.sra
+Rejected 21966 READS because of filtering out non-biological READS
+Rejected 2355 READS because READLEN < 1
+Read 7322 spots for /home/gavin/ncbi/public/sra/SRR047364.sra
+Written 4967 spots for /home/gavin/ncbi/public/sra/SRR047364.sra
+Rejected 19944 READS because of filtering out non-biological READS
+Rejected 3270 READS because READLEN < 1
+Read 6648 spots for /home/gavin/ncbi/public/sra/SRR049637.sra
+Written 3378 spots for /home/gavin/ncbi/public/sra/SRR049637.sra
+Rejected 54642 READS because of filtering out non-biological READS
+Rejected 5786 READS because READLEN < 1
+Read 18214 spots for /home/gavin/ncbi/public/sra/SRR049639.sra
+Written 12428 spots for /home/gavin/ncbi/public/sra/SRR049639.sra
+Rejected 47322 READS because of filtering out non-biological READS
+Rejected 6179 READS because READLEN < 1
+Read 15774 spots for /home/gavin/ncbi/public/sra/SRR050140.sra
+Written 9595 spots for /home/gavin/ncbi/public/sra/SRR050140.sra
+Rejected 237 READS because of filtering out non-biological READS
+Rejected 36 READS because READLEN < 1
+Read 79 spots for /home/gavin/ncbi/public/sra/SRR055670.sra
+Written 43 spots for /home/gavin/ncbi/public/sra/SRR055670.sra
+Rejected 28953 READS because of filtering out non-biological READS
+Rejected 4503 READS because READLEN < 1
+Read 9651 spots for /home/gavin/ncbi/public/sra/SRR055682.sra
+Written 5148 spots for /home/gavin/ncbi/public/sra/SRR055682.sra
+Rejected 24495 READS because of filtering out non-biological READS
+Rejected 3822 READS because READLEN < 1
+Read 8165 spots for /home/gavin/ncbi/public/sra/SRR055750.sra
+Written 4343 spots for /home/gavin/ncbi/public/sra/SRR055750.sra
+Rejected 36786 READS because of filtering out non-biological READS
+Rejected 5653 READS because READLEN < 1
+Read 12262 spots for /home/gavin/ncbi/public/sra/SRR055763.sra
+Written 6609 spots for /home/gavin/ncbi/public/sra/SRR055763.sra
+Rejected 33765 READS because of filtering out non-biological READS
+Rejected 4805 READS because READLEN < 1
+Read 11255 spots for /home/gavin/ncbi/public/sra/SRR056888.sra
+Written 6450 spots for /home/gavin/ncbi/public/sra/SRR056888.sra
+Rejected 50943 READS because of filtering out non-biological READS
+Rejected 6381 READS because READLEN < 1
+Read 16981 spots for /home/gavin/ncbi/public/sra/SRR056901.sra
+Written 10600 spots for /home/gavin/ncbi/public/sra/SRR056901.sra
+Rejected 291 READS because of filtering out non-biological READS
+Rejected 38 READS because READLEN < 1
+Read 97 spots for /home/gavin/ncbi/public/sra/SRR056971.sra
+Written 59 spots for /home/gavin/ncbi/public/sra/SRR056971.sra
+Rejected 29766 READS because of filtering out non-biological READS
+Rejected 3791 READS because READLEN < 1
+Read 9922 spots for /home/gavin/ncbi/public/sra/SRR056983.sra
+Written 6131 spots for /home/gavin/ncbi/public/sra/SRR056983.sra
+Read 33417429 spots for /home/gavin/ncbi/public/sra/SRR059366.sra
+Written 33417429 spots for /home/gavin/ncbi/public/sra/SRR059366.sra
+Read 33646189 spots for /home/gavin/ncbi/public/sra/SRR059367.sra
+Written 33646189 spots for /home/gavin/ncbi/public/sra/SRR059367.sra
+Read 35189599 spots for /home/gavin/ncbi/public/sra/SRR059504.sra
+Written 35189599 spots for /home/gavin/ncbi/public/sra/SRR059504.sra
+Read 34772894 spots for /home/gavin/ncbi/public/sra/SRR059505.sra
+Written 34772894 spots for /home/gavin/ncbi/public/sra/SRR059505.sra
+Read 40132268 spots for /home/gavin/ncbi/public/sra/SRR059854.sra
+Written 40132268 spots for /home/gavin/ncbi/public/sra/SRR059854.sra
+Read 39823374 spots for /home/gavin/ncbi/public/sra/SRR059855.sra
+Written 39823374 spots for /home/gavin/ncbi/public/sra/SRR059855.sra
+Read 34843050 spots for /home/gavin/ncbi/public/sra/SRR059922.sra
+Written 34843050 spots for /home/gavin/ncbi/public/sra/SRR059922.sra
+Read 33485130 spots for /home/gavin/ncbi/public/sra/SRR059923.sra
+Written 33485130 spots for /home/gavin/ncbi/public/sra/SRR059923.sra
+Read 24536252 spots for /home/gavin/ncbi/public/sra/SRR059990.sra
+Written 24536252 spots for /home/gavin/ncbi/public/sra/SRR059990.sra
+Read 28925283 spots for /home/gavin/ncbi/public/sra/SRR059991.sra
+Written 28925283 spots for /home/gavin/ncbi/public/sra/SRR059991.sra
+Read 36762710 spots for /home/gavin/ncbi/public/sra/SRR060356.sra
+Written 36762710 spots for /home/gavin/ncbi/public/sra/SRR060356.sra
+Read 38037375 spots for /home/gavin/ncbi/public/sra/SRR060357.sra
+Written 38037375 spots for /home/gavin/ncbi/public/sra/SRR060357.sra
+Read 30125707 spots for /home/gavin/ncbi/public/sra/SRR061138.sra
+Written 30125707 spots for /home/gavin/ncbi/public/sra/SRR061138.sra
+Read 32286969 spots for /home/gavin/ncbi/public/sra/SRR061236.sra
+Written 32286969 spots for /home/gavin/ncbi/public/sra/SRR061236.sra
+Read 24904900 spots for /home/gavin/ncbi/public/sra/SRR061280.sra
+Written 24904900 spots for /home/gavin/ncbi/public/sra/SRR061280.sra
+Read 24526362 spots for /home/gavin/ncbi/public/sra/SRR061284.sra
+Written 24526362 spots for /home/gavin/ncbi/public/sra/SRR061284.sra
+Read 22899045 spots for /home/gavin/ncbi/public/sra/SRR061322.sra
+Written 22899045 spots for /home/gavin/ncbi/public/sra/SRR061322.sra
+Read 22818139 spots for /home/gavin/ncbi/public/sra/SRR061339.sra
+Written 22818139 spots for /home/gavin/ncbi/public/sra/SRR061339.sra
+Read 27945053 spots for /home/gavin/ncbi/public/sra/SRR061441.sra
+Written 27945053 spots for /home/gavin/ncbi/public/sra/SRR061441.sra
+Read 29896252 spots for /home/gavin/ncbi/public/sra/SRR061448.sra
+Written 29896252 spots for /home/gavin/ncbi/public/sra/SRR061448.sra
+Read 29685434 spots for /home/gavin/ncbi/public/sra/SRR061449.sra
+Written 29685434 spots for /home/gavin/ncbi/public/sra/SRR061449.sra
+Read 26937639 spots for /home/gavin/ncbi/public/sra/SRR061451.sra
+Written 26937639 spots for /home/gavin/ncbi/public/sra/SRR061451.sra
+Read 29509713 spots for /home/gavin/ncbi/public/sra/SRR061515.sra
+Written 29509713 spots for /home/gavin/ncbi/public/sra/SRR061515.sra
+Read 29680945 spots for /home/gavin/ncbi/public/sra/SRR061516.sra
+Written 29680945 spots for /home/gavin/ncbi/public/sra/SRR061516.sra
+Read 31564218 spots for /home/gavin/ncbi/public/sra/SRR061692.sra
+Written 31564218 spots for /home/gavin/ncbi/public/sra/SRR061692.sra
+Read 33513646 spots for /home/gavin/ncbi/public/sra/SRR061693.sra
+Written 33513646 spots for /home/gavin/ncbi/public/sra/SRR061693.sra
+Read 38360213 spots for /home/gavin/ncbi/public/sra/SRR061957.sra
+Written 38360213 spots for /home/gavin/ncbi/public/sra/SRR061957.sra
+Read 26794034 spots for /home/gavin/ncbi/public/sra/SRR061958.sra
+Written 26794034 spots for /home/gavin/ncbi/public/sra/SRR061958.sra
+Read 35710072 spots for /home/gavin/ncbi/public/sra/SRR062282.sra
+Written 35710072 spots for /home/gavin/ncbi/public/sra/SRR062282.sra
+Read 35847820 spots for /home/gavin/ncbi/public/sra/SRR062283.sra
+Written 35847820 spots for /home/gavin/ncbi/public/sra/SRR062283.sra
+Read 17556351 spots for /home/gavin/ncbi/public/sra/SRR062321.sra
+Written 17556351 spots for /home/gavin/ncbi/public/sra/SRR062321.sra
+Read 31197073 spots for /home/gavin/ncbi/public/sra/SRR062395.sra
+Written 31197073 spots for /home/gavin/ncbi/public/sra/SRR062395.sra
+Read 27155021 spots for /home/gavin/ncbi/public/sra/SRR062419.sra
+Written 27155021 spots for /home/gavin/ncbi/public/sra/SRR062419.sra
+Read 31113317 spots for /home/gavin/ncbi/public/sra/SRR062423.sra
+Written 31113317 spots for /home/gavin/ncbi/public/sra/SRR062423.sra
+Read 27051128 spots for /home/gavin/ncbi/public/sra/SRR062433.sra
+Written 27051128 spots for /home/gavin/ncbi/public/sra/SRR062433.sra
+Read 28320907 spots for /home/gavin/ncbi/public/sra/SRR062466.sra
+Written 28320907 spots for /home/gavin/ncbi/public/sra/SRR062466.sra
+Read 28346385 spots for /home/gavin/ncbi/public/sra/SRR062467.sra
+Written 28346385 spots for /home/gavin/ncbi/public/sra/SRR062467.sra
+Read 32021454 spots for /home/gavin/ncbi/public/sra/SRR062530.sra
+Written 32021454 spots for /home/gavin/ncbi/public/sra/SRR062530.sra
+Read 4520089 spots for /home/gavin/ncbi/public/sra/SRR063460.sra
+Written 4520089 spots for /home/gavin/ncbi/public/sra/SRR063460.sra
+Read 23291208 spots for /home/gavin/ncbi/public/sra/SRR063461.sra
+Written 23291208 spots for /home/gavin/ncbi/public/sra/SRR063461.sra
+Read 30986990 spots for /home/gavin/ncbi/public/sra/SRR353620.sra
+Written 30986990 spots for /home/gavin/ncbi/public/sra/SRR353620.sra

@@ -1,4 +1,6 @@
-# Raw data and intermediate files
+# Raw, intermediate and result data
 data/
 figures/
+tables/
 trimmomatic_tabular_log.txt
+uniref/

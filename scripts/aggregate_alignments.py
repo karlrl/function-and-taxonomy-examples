@@ -124,7 +124,7 @@ def make_summary(samples, to_type=''):
 @click.command()
 @click.argument('input_files', nargs=-1, type=click.Path(exists=True))
 @click.option('--output-file', type=click.Path(), default='abundances.spf')
-@click.option('--summary-file', type=click.Path(), default='summary.spf')
+@click.option('--summary-file', type=click.Path())
 @click.option('--mapping-file', type=click.Path())
 @click.option('--from-type', type=click.STRING)
 @click.option('--to-type', type=click.STRING)
@@ -171,10 +171,11 @@ def aggregate_alignments(
         writer.writerow(header)
         writer.writerows(join_by_subject_id(samples))
 
-    with open(summary_file, 'wt') as f:
-        summary_writer = csv.writer(f, delimiter='\t')
-        summary_table = make_summary(samples, to_type)
-        summary_writer.writerows(summary_table)
+    if summary_file:
+        with open(summary_file, 'wt') as f:
+            summary_writer = csv.writer(f, delimiter='\t')
+            summary_table = make_summary(samples, to_type)
+            summary_writer.writerows(summary_table)
 
 
 if __name__ == '__main__':

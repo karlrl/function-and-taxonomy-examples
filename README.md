@@ -1,6 +1,11 @@
 # Practical Examples
 
-Companion repository for TBD paper.
+Companion repository for:
+
+S. Andrew Inkpen, Gavin M. Douglas, T. D.P. Brunet, Karl Leuschen, W. Ford 
+Doolittle, and Morgan G.I. Langille. _The Coupling of Taxonomy and Function in 
+Microbiomes_. (Submitted).
+
 
 ## Prerequisites
 
@@ -8,6 +13,7 @@ Companion repository for TBD paper.
 
 - [DIAMOND 0.8.36][diamond]
 - [MetaPhlAn2][metaphlan2]
+- [HUMAnN][humann]
 - various utilities required by the [Microbiome Helper][microbiome_helper]
 
 ### Environment
@@ -17,8 +23,8 @@ assume a Ubuntu environment (though macOS will likely work as well) and
 Python 3.6 installed.
 
 To install the additional Python dependencies, [Anaconda/Miniconda][anaconda]
-is recommended. Assuming Miniconda is installed, run the following from the
-project root:
+is recommended. Assuming one of these tools is installed, run the following 
+from the project root:
 
 ```
 $ conda env create --file environment.yml
@@ -33,12 +39,12 @@ unless otherwise noted.
 Two [Universal Protein Resource (UniProt)][uniprot] databases are required (see
 the [UniProt downloads page][uniprot_downloads]). This project uses the 2017_04
 release, though newer releases may give similar results:
-  - [UniProt Reference Clusters at 100% identity (UniRef100)][uniref100_ftp]
+  - UniProt Reference Clusters at 100% identity (UniRef100)
     - both XML and FASTA versions required
-  - [UniProt Knowledgebase (UniProtKB) ID Mapping][uniprotkb_ftp]
+  - UniProt Knowledgebase (UniProtKB) ID Mapping
 
 To download the latest version of the databases (older releases can be
-downloaded from the [UniProt FTP site][previous_rel_ftp]):
+downloaded from the UniProt via FTP):
 
 ```
 $ mkdir uniref
@@ -48,7 +54,7 @@ $ curl -o uniref/idmapping.dat.gz \
     ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz    
 ```
 
-The SHA1 checksums for the databases are:
+The SHA1 checksums for the databases used in this analysis:
 
 ```
 85ebde5758f2067175a4ac29a8245a495b7ce1f3  uniref/uniref100.fasta.gz
@@ -84,8 +90,8 @@ $ python scripts/make_uniprotkb_mapping.py \
     --output-mapping uniref/uniprot_to_other.tsv
 ```
 
-Dataset Processing
-------------------
+
+## Dataset Processing
 
 Raw data will be stored in `data/`:
 
@@ -119,6 +125,7 @@ The `metadata/` folder contains more details about the samples:
 
       $ tail -n +2 SRS_SRR_ids_linked.txt | awk '{ print "prefetch "$2 }' \
         >> prefetch_cmds.sh
+
 
 ### Prepare sample sequences and QC
 
@@ -169,10 +176,11 @@ $ concat_paired_end.pl -p 4 -o data/filtered_reads \
 Convert FASTQ files to FASTA:
 
 ```
+$ mkdir data/fasta
 $ parallel --jobs 2 \
-  'zcat data/filtered_reads/{} \
+  'zcat {} \
     | fastq_to_fasta -v -n -z -o data/fasta/{/.}.fasta.gz \
-    > fasta/{/.}.log' \
+    > data/fasta/{/.}.log' \
   ::: data/filtered_reads/*fastq.gz
 $ rename s/.fastq// data/fasta/*
 ```
@@ -185,14 +193,14 @@ $ mkdir data/fasta-subsampled-7M
 $ parallel --jobs 2 \
   'export SEED=$RANDOM; \
     echo "{} $SEED" >> data/fasta-subsampled-7M/seeds.txt; \
-    seqtk sample -s $SEED {} 7000000 > data/fasta-subsampled-7M/{/.}' \
+    seqtk sample -s $SEED {} 7000000 | gzip \
+    > data/fasta-subsampled-7M/{/.}.gz' \
   ::: data/fasta/*fasta*
-$ gzip data/fasta-subsampled-7M/*.fasta
 ```
 
 ## Analysis
 
-### Functional composition
+### Functional composition (UniRef)
 
 Run DIAMOND search against the UniRef100 database. Importantly, we configure
 the search to only return the top hit for each query at an identity cutoff of
@@ -200,17 +208,18 @@ the search to only return the top hit for each query at an identity cutoff of
 with 48 vCPUs:
 
 ```
+$ mkdir diamond_uniref
 $ parallel --jobs 2 \
   'diamond blastx \
       --db uniref/uniref100.2017_04.dmnd \
       --query {} \
       --max-target-seqs 1 \
       --id 0.9 \
-      --out data/diamond_out/{/.}.txt \
+      --out data/diamond_uniref/{/.}.txt \
       --block-size 6 \
       --threads 20 \
       --index-chunks 1 \
-    > data/diamond_out/{/.}.log' \
+    > data/diamond_uniref/{/.}.log' \
     ::: data/fasta-subsampled-7M/*fasta*
 ```
 
@@ -221,7 +230,7 @@ Now, generate tables of alignment counts and scale down to other databases:
 $ python scripts/aggregate_alignments.py \
     --output-file tables/uniref100.spf \
     --summary-file uniref100_summary.tsv \
-    diamond_out/hmp/uniref100/SRS0*.txt
+    data/diamond_uniref/SRS0*.txt
 
 # UniRef 90 and 50
 $ parallel --jobs 2 --link \
@@ -230,35 +239,42 @@ $ parallel --jobs 2 --link \
       --from-type UniRef100 \
       --to-type {1} \
       --output-file tables/uniref100_to_{2}.spf \
-      --summary-file uniref100_to_{2}_summary.tsv \
-      diamond_out/hmp/uniref100/SRS0*.txt' \
+      data/diamond_uniref/SRS0*.txt' \
     ::: UniRef90 UniRef50 ::: uniref90 uniref50
-
-# KOs, Modules and Pathways
-$ parallel --jobs 3 --link \
-    'python scripts/aggregate_alignments.py \
-      --mapping-file uniref/uniprotkb_to_other.tsv \
-      --from-type UniRef100 \
-      --to-type {1} \
-      --output-file tables/uniref100_to_{2}.spf \
-      --summary-file uniref100_to_{2}_summary.tsv \
-      diamond_out/hmp/uniref100/SRS0*.txt' \
-    ::: KO "KEGG Modules" "KEGG Pathways" ::: kos modules pathways
 ```
 
-The previous commands will have generated summary files that we will now
-combine for convenience:
+
+### Functional composition (KEGG)
+
+Run a second DIAMOND search, this time using the `run_pre_humann.pl` tool. Note
+that this script is a wrapper around `diamond blastx`, with a hardcoded path to
+a KEGG database appropriate for use with HUMAnN:
 
 ```
-$ for f in *_summary.tsv; do tail -n+2 $f | grep Alignments \
-    >> alignments_summary.tsv; done
-$ for f in *_summary.tsv; do tail -n+2 $f | grep Subjects \
-    >> subjects_summary.tsv; done
-$ (head uniref100_summary.tsv; cat alignments_summary.tsv) > \
-    tables/functional_alignments_summary.tsv
-$ (head uniref100_summary.tsv; cat subjects_summary.tsv) > \
-    tables/functional_subjects_summary.tsv
-$ rm *_summary.tsv
+$ mkdir -p data/diamond_kegg
+$ run_pre_humann.pl -p 24 -o data/diamond_kegg \
+  data/fasta-subsampled-7M/*.fasta.gz \
+  | tee diamond_kegg/hmp/kegg/search-combined.log
+```
+
+Run HUMAnN. HUMAnN requires Python 2.7, so the following `scons` command must
+be executed within an environment whose default Python is 2.7 (e.g. within
+a conda environment created like `conda create -n py2 python=2.7` and
+activated like `source activate py2`):
+
+```
+$ export HUMANN_DIR="/path/to/humann-0.99"
+$ rm $HUMANN_DIR/input/*txt $HUMANN_DIR/output/*
+$ ln -s $PWD/data/diamond_kegg/*.txt $HUMANN_DIR/input
+$ pushd $HUMANN_DIR
+$ scons -j 20
+$ popd
+$ humann_to_stamp.pl $HUMANN_DIR/output/04b-hit-keg-mpm-cop-nul-nve-nve.txt \
+  > tables/humann_modules.spf
+$ humann_to_stamp.pl $HUMANN_DIR/output/04b-hit-keg-mpt-cop-nul-nve-nve.txt \
+  > tables/humann_pathways.spf
+$ humann_to_stamp.pl $HUMANN_DIR/output/01b-hit-keg-cat.txt \
+  > tables/humann_kos.spf
 ```
 
 ### Taxonomic composition (Using MetaPhlAn2)
@@ -278,20 +294,15 @@ To generate the figures, run the following R scripts:
 ```
 $ mkdir figures
 $ Rscript scripts/num_taxa_per_func_distribution.R
-$ Rscript scripts/function_taxonomy_box_plots.R
+$ Rscript scripts/bray_curtis_stool_box_plot.R
 ```
 
-## Citing and Contributors
 
-Citation TBD
-
-Contributors (to this repository):
-  - Gavin Douglas
-  - Karl Leuschen
-
-
+[diamond]: https://github.com/bbuchfink/diamond/tree/v0.8.36
+[metaphlan2]: http://huttenhower.sph.harvard.edu/metaphlan2
+[microbiome_helper]: https://github.com/mlangill/microbiome_helper
+[humann]: http://huttenhower.sph.harvard.edu/humann
 [anaconda]: https://www.continuum.io/anaconda-overview
 [previous_rel_ftp]: ftp://ftp.uniprot.org/pub/databases/uniprot/previous_releases/
+[sra_tools]: https://github.com/ncbi/sra-tools
 [uniprot_downloads]: http://www.uniprot.org/downloads
-[uniprotkb_ftp]: ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/
-[uniref100_ftp]: ftp://ftp.uniprot.org/pub/databases/uniprot/uniref/uniref100/

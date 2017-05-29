@@ -1,3 +1,4 @@
 # Raw data and intermediate files
 data/
 figures/
+trimmomatic_tabular_log.txt

@@ -169,6 +169,8 @@ label_col <- c(
   replicate(8, "white")  # Taxonomic levels
 )
 
+pdf("figures/function_and_taxa.pdf", width = 11, height = 8.5)
+
 boxplot(
   spearman_combined_stool_df,
   ylim = c(-0.1, 1),
@@ -223,3 +225,4 @@ boxplot(
   las = 2
 )
 
+dev.off()

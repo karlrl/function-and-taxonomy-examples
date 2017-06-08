@@ -287,6 +287,30 @@ $ metaphlan_to_stamp.pl metaphlan-taxonomy.txt > tables/metaphlan-taxonomy.spf
 $ rm -rf metaphlan_out; rm metaphlan-taxonomy.txt
 ```
 
+### Characterize number of taxa that share functions
+
+To contrast the phylogenetic breadth of the UniRef and KEGG databases one can
+compute the number of taxa that share a function in each of these databases. The
+distribution of the number of taxa that share a function for each function is
+calculated by the *num_taxa_per_function.py* script for UniRef100, UniRef90,
+UniRef50, KEGG orthologs, KEGG pathways, and KEGG modules. This script reads in
+a mapping file (in the same format as uniref/uniprot_to_other.tsv above) and the
+taxonomic level of interest that should be collapsed to.
+
+This script needs to be run in a Python 2 environment, which could be done in
+a virtual environment as described above, and requires the _ete2_ python library
+to determine the taxonomic label of interest from NCBI taxids. Note that not all
+taxids have defined labels for all levels (e.g. many taxids have undefined
+orders and classes). However, the majority of taxids have defined species and
+superkingdom labels, which are specified in the below commands.
+
+```
+$ python scripts/num_taxa_per_function.py uniref/uniprot_to_other.tsv \
+species > tables/species_function_counts.txt
+$ python scripts/num_taxa_per_function.py uniref/uniprot_to_other.tsv \
+superkingdom > tables/superkingdom_function_counts.txt
+```
+
 ### Generating figures
 
 To generate the figures, run the following R scripts:

@@ -2,8 +2,8 @@
 
 Companion repository for:
 
-S. Andrew Inkpen, Gavin M. Douglas, T. D.P. Brunet, Karl Leuschen, W. Ford 
-Doolittle, and Morgan G.I. Langille. _The Coupling of Taxonomy and Function in 
+S. Andrew Inkpen, Gavin M. Douglas, T. D.P. Brunet, Karl Leuschen, W. Ford
+Doolittle, and Morgan G.I. Langille. _The Coupling of Taxonomy and Function in
 Microbiomes_. (Submitted).
 
 
@@ -23,7 +23,7 @@ assume a Ubuntu environment (though macOS will likely work as well) and
 Python 3.6 installed.
 
 To install the additional Python dependencies, [Anaconda/Miniconda][anaconda]
-is recommended. Assuming one of these tools is installed, run the following 
+is recommended. Assuming one of these tools is installed, run the following
 from the project root:
 
 ```
@@ -80,7 +80,7 @@ $ python scripts/make_uniref_mapping.py \
     uniref/uniref100.xml.gz uniref/uniref_mapping.tsv
 ```
 
-And another to map UniProtKB accession numbers to NCBI taxa IDs, 
+And another to map UniProtKB accession numbers to NCBI taxa IDs,
 UniRef Clusters and KEGG Orthologs, Modules and Pathways:
 
 ```
@@ -305,4 +305,5 @@ $ Rscript scripts/bray_curtis_stool_box_plot.R
 [anaconda]: https://www.continuum.io/anaconda-overview
 [previous_rel_ftp]: ftp://ftp.uniprot.org/pub/databases/uniprot/previous_releases/
 [sra_tools]: https://github.com/ncbi/sra-tools
+[uniprot]: http://www.uniprot.org/
 [uniprot_downloads]: http://www.uniprot.org/downloads

@@ -28,7 +28,7 @@ def ncbi_taxa_lineage(tax_id, level2keep):
 
             lineage[level] = lineage_id
 
-    return(lineage)
+    return lineage
 
 
 def add_lineage_to_func(d, lin, uniref100_id, uniref50_id, uniref90_id, module,
@@ -151,7 +151,9 @@ def main():
              the taxonomic specificity of UniRef clusters and KEGG functions\
              at a specified taxonomic level. UniRef clusters at 50, 90,\
              and 100 percent are analyzed. KEGG orthologs, modules, and\
-             pathways are also analyzed.")
+             pathways are also analyzed. Output will be written to a file\
+             with the taxonomic level as prefix followed by\
+             \"_function_counts.txt\"")
 
     parser.add_argument("mapping_file", metavar="mapping_file", type=str,
                         nargs=1, help="File with mappings from UniRef clusters\
@@ -171,19 +173,18 @@ def main():
     # TaxIDs. Keep track of the number of different taxa that contains each
     # function.
 
-    # First get dictionary which will contain keys for each type of function,
+    # Intitialize dictionary with keys that are each type of function,
     # with each individual function id as a value. Each of these ids will
     # be the key to a deeper dictionary which will contain a set of different
     # taxa at each taxonomic level of interest.
-    func2taxa = {}
-
-    # Intitialize inner dictionaries for each function type.
-    func2taxa["uniref100"] = {}
-    func2taxa["uniref90"] = {}
-    func2taxa["uniref50"] = {}
-    func2taxa["ko"] = {}
-    func2taxa["module"] = {}
-    func2taxa["pathway"] = {}
+    func2taxa = {
+        "uniref100": {},
+        "uniref90": {},
+        "uniref50": {},
+        "ko": {},
+        "module": {},
+        "pathway": {},
+    }
 
     # Dict containing level of interest for taxon IDs.
     lineage_ids = {}

@@ -298,18 +298,20 @@ a mapping file (in the same format as uniref/uniprot_to_other.tsv above) and the
 taxonomic level of interest that should be collapsed to.
 
 This script needs to be run in a Python 2 environment, which could be done in
-a virtual environment as described above, and requires the _ete2_ python library
-to determine the taxonomic label of interest from NCBI taxids. Note that not all
+a conda environment as described above, and requires the _ete2_ python library
+to determine the taxonomic label of interest from NCBI taxids. You will need to
+install the NCBI database locally the first time you use this library
+(instructions [here][ncbi_tax_tutorial]). Note that not all
 taxids have defined labels for all levels (e.g. many taxids have undefined
 orders and classes). However, the majority of taxids have defined species and
 superkingdom labels, which are specified in the below commands.
 
 ```
-$ python scripts/num_taxa_per_function.py uniref/uniprot_to_other.tsv \
-species > tables/species_function_counts.txt
-$ python scripts/num_taxa_per_function.py uniref/uniprot_to_other.tsv \
-superkingdom > tables/superkingdom_function_counts.txt
+$ python scripts/num_taxa_per_function.py uniref/uniprot_to_other.tsv species
+$ python scripts/num_taxa_per_function.py uniref/uniprot_to_other.tsv superkingdom
 ```
+
+The output files of these commands are in the _tables_ folder.  
 
 ### Generating figures
 
@@ -331,3 +333,4 @@ $ Rscript scripts/bray_curtis_stool_box_plot.R
 [sra_tools]: https://github.com/ncbi/sra-tools
 [uniprot]: http://www.uniprot.org/
 [uniprot_downloads]: http://www.uniprot.org/downloads
+[ncbi_tax_tutorial]: http://etetoolkit.org/docs/latest/tutorial/tutorial_ncbitaxonomy.html  

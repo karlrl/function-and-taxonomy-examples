@@ -20,7 +20,7 @@ Microbiomes_. (Submitted).
 
 In addition to having the prerequisite software installed, the steps below
 assume a Ubuntu environment (though macOS will likely work as well) and
-Python 3.6 installed.
+Python 2.7 installed.
 
 To install the additional Python dependencies, [Anaconda/Miniconda][anaconda]
 is recommended. Assuming one of these tools is installed, run the following

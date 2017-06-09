@@ -7,7 +7,7 @@ source("scripts/plot_mean_num_taxa_R_functions.R")
 species_input <- num_taxa_barplot2_input("tables/species_function_counts.txt")
 superkingdom_input <- num_taxa_barplot2_input("tables/superkingdom_function_counts.txt")
 
-# Specify 
+# Specify order of func types.
 cat_names <- c("UniRef100", "UniRef90", "UniRef50", "KEGG\nOrthologs",
                "KEGG\nModules", "KEGG\nPathways")
 

@@ -2,8 +2,8 @@
 
 Companion repository for:
 
-S. Andrew Inkpen, Gavin M. Douglas, T. D.P. Brunet, Karl Leuschen, W. Ford 
-Doolittle, and Morgan G.I. Langille. _The Coupling of Taxonomy and Function in 
+S. Andrew Inkpen, Gavin M. Douglas, T. D.P. Brunet, Karl Leuschen, W. Ford
+Doolittle, and Morgan G.I. Langille. _The Coupling of Taxonomy and Function in
 Microbiomes_. (Submitted).
 
 
@@ -23,7 +23,7 @@ assume a Ubuntu environment (though macOS will likely work as well) and
 Python 3.6 installed.
 
 To install the additional Python dependencies, [Anaconda/Miniconda][anaconda]
-is recommended. Assuming one of these tools is installed, run the following 
+is recommended. Assuming one of these tools is installed, run the following
 from the project root:
 
 ```
@@ -80,7 +80,7 @@ $ python scripts/make_uniref_mapping.py \
     uniref/uniref100.xml.gz uniref/uniref_mapping.tsv
 ```
 
-And another to map UniProtKB accession numbers to NCBI taxa IDs, 
+And another to map UniProtKB accession numbers to NCBI taxa IDs,
 UniRef Clusters and KEGG Orthologs, Modules and Pathways:
 
 ```
@@ -287,6 +287,32 @@ $ metaphlan_to_stamp.pl metaphlan-taxonomy.txt > tables/metaphlan-taxonomy.spf
 $ rm -rf metaphlan_out; rm metaphlan-taxonomy.txt
 ```
 
+### Characterize number of taxa that share functions
+
+To contrast the phylogenetic breadth of the UniRef and KEGG databases one can
+compute the number of taxa that share a function in each of these databases. The
+distribution of the number of taxa that share a function for each function is
+calculated by the *num_taxa_per_function.py* script for UniRef100, UniRef90,
+UniRef50, KEGG orthologs, KEGG pathways, and KEGG modules. This script reads in
+a mapping file (in the same format as uniref/uniprot_to_other.tsv above) and the
+taxonomic level of interest that should be collapsed to.
+
+This script needs to be run in a Python 2 environment, which could be done in
+a conda environment as described above, and requires the _ete2_ python library
+to determine the taxonomic label of interest from NCBI taxids. You will need to
+install the NCBI database locally the first time you use this library
+(instructions [here][ncbi_tax_tutorial]). Note that not all
+taxids have defined labels for all levels (e.g. many taxids have undefined
+orders and classes). However, the majority of taxids have defined species and
+superkingdom labels, which are specified in the below commands.
+
+```
+$ python scripts/num_taxa_per_function.py uniref/uniprot_to_other.tsv species
+$ python scripts/num_taxa_per_function.py uniref/uniprot_to_other.tsv superkingdom
+```
+
+The output files of these commands are in the _tables_ folder.  
+
 ### Generating figures
 
 To generate the figures, run the following R scripts:
@@ -305,4 +331,6 @@ $ Rscript scripts/bray_curtis_stool_box_plot.R
 [anaconda]: https://www.continuum.io/anaconda-overview
 [previous_rel_ftp]: ftp://ftp.uniprot.org/pub/databases/uniprot/previous_releases/
 [sra_tools]: https://github.com/ncbi/sra-tools
+[uniprot]: http://www.uniprot.org/
 [uniprot_downloads]: http://www.uniprot.org/downloads
+[ncbi_tax_tutorial]: http://etetoolkit.org/docs/latest/tutorial/tutorial_ncbitaxonomy.html  
